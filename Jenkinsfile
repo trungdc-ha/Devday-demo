@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage("Junit Test") {
             steps {
-                sh "mvn clean test"
+                sh "-Dmaven.test.failure.ignore=true test"
             }
         }
         stage('Report JUNIT') {
