@@ -13,7 +13,7 @@ pipeline {
             }
         }
         stage('Report JUNIT') {
-            steps{[$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml']}
+            step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
         }
         stage('Build Maven') {
             steps {
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 script {
 //                    sh 'docker build -t trungdc68/devops-integration .'
-                     sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} . "
+                    sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} . "
                 }
             }
         }
