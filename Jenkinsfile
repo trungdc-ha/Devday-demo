@@ -51,9 +51,9 @@ pipeline {
 //        }
     }
     post {
-        always {
-            junit '**/reports/junit/*.xml'
-        }
+//        always {
+//            junit '**/reports/junit/*.xml'
+//        }
         success {
             echo "SUCCESSFUL"
         }
