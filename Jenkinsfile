@@ -7,20 +7,20 @@ pipeline {
         DOCKER_IMAGE = "trungdc68/demo"
     }
     stages {
+        stage("Junit Test") {
+            steps {
+                sh "mvn clean test"
+            }
+        }
+        stage('Report JUNIT') {
+            step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+        }
         stage('Build Maven') {
             steps {
                 checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/trungdc-ha/demo.git']])
-                sh 'mvn clean install'
+                sh 'mvn install'
             }
         }
-//        stage("Junit Test") {
-//            steps {
-//                sh "mvn test"
-//            }
-//        }
-//        stage('Report JUNIT') {
-//            steps([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
-//        }
 
         stage('Build docker image') {
             environment {
@@ -51,9 +51,6 @@ pipeline {
 //        }
     }
     post {
-//        always {
-//            junit '**/reports/junit/*.xml'
-//        }
         success {
             echo "SUCCESSFUL"
         }
