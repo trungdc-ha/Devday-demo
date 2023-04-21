@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage("Junit Test") {
             steps {
-                sh "./mvnw --batch-mode -Dmaven.test.failure.ignore=true clean test"
+                sh "mvn --batch-mode -Dmaven.test.failure.ignore=true clean test"
             }
         }
         stage('Report JUNIT') {
