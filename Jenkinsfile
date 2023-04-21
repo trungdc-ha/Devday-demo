@@ -19,8 +19,8 @@ pipeline {
         }
         stage('Build Maven') {
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/trungdc-ha/devday-demo.git']])
-                sh 'mvn install'
+//                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/trungdc-ha/devday-demo.git']])
+                sh 'mvn clean install'
             }
         }
 
