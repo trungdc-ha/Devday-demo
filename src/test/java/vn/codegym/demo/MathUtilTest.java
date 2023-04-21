@@ -17,7 +17,7 @@ public class MathUtilTest {
 
     @Test
     public void test2() {
-        assertEquals(util.sum(2, 1), 3);
+        assertEquals(util.sum(2, 1), 5);
     }
 
     @Test
