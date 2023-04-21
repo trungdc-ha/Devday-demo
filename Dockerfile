@@ -1,4 +1,4 @@
 FROM adoptopenjdk/openjdk11:alpine
 EXPOSE 8081
-ADD target/demo.jar demo.jar
-ENTRYPOINT ["java","-jar","/demo.jar"]
+ADD target/Devday-demo.jar Devday-demo.jar
+ENTRYPOINT ["java","-jar","/Devday-demo.jar"]

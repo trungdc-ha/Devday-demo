@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>vn.codegym</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>Devday-demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>demo</name>
-    <description>demo</description>
+    <name>Devday-demo</name>
+    <description>Devday-demo</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -40,7 +40,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-        <finalName>demo</finalName>
+        <finalName>Devday-demo</finalName>
     </build>
     <repositories>
         <repository>
