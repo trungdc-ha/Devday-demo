@@ -4,7 +4,7 @@ pipeline {
         maven 'maven_3_8_1'
     }
     environment {
-        DOCKER_IMAGE = "trungdc68/Devday-demo"
+        DOCKER_IMAGE = "trungdc68/devday-demo"
     }
     stages {
         stage("Junit Test") {
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Build Maven') {
             steps {
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/trungdc-ha/Devday-demo.git']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/trungdc-ha/devday-demo.git']])
                 sh 'mvn install'
             }
         }
