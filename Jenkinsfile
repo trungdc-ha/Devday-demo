@@ -13,7 +13,7 @@ pipeline {
             }
         }
         stage('Report JUNIT') {
-            steps([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
+            steps{[$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml']}
         }
         stage('Build Maven') {
             steps {
